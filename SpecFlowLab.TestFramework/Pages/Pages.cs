@@ -25,5 +25,10 @@ namespace SpecFlowLab.TestFramework.Pages
         {
             get { return GetPage<DefaultPage>(); }
         }
+
+        public static ContactPage Contact
+        {
+            get { return GetPage<ContactPage>(); }
+        }
     }
 }

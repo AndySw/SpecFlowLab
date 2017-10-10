@@ -14,35 +14,35 @@ namespace SpecFlowLab.TestFramework.Pages
     public class TopNavigationPage
     {
         [FindsBy(How = How.LinkText, Using = "Application name")]
-        private IWebElement titleLink;
+        private IWebElement _titleLink;
 
         [FindsBy(How = How.LinkText, Using = "Home")]
-        private IWebElement homeLink;
+        private IWebElement _homeLink;
 
         [FindsBy(How = How.LinkText, Using = "About")]
-        private IWebElement aboutLink;
+        private IWebElement _aboutLink;
 
         [FindsBy(How = How.LinkText, Using = "Contact")]
-        private IWebElement contactLink;
+        private IWebElement _contactLink;
 
         public void Title()
         {
-            titleLink.Click();
+            _titleLink.Click();
         }
 
         public void Home()
         {
-            homeLink.Click();
+            _homeLink.Click();
         }
 
         public void About()
         {
-            aboutLink.Click();
+            _aboutLink.Click();
         }
 
         public void Contact()
         {
-            contactLink.Click();
+            _contactLink.Click();
         }
     }
 }

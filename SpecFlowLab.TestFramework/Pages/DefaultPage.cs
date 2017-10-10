@@ -14,40 +14,45 @@ namespace SpecFlowLab.TestFramework.Pages
     public class DefaultPage
     {
         [FindsBy(How = How.Id, Using = "aspnet-link")]
-        private IWebElement aspNetLink;
+        private IWebElement _aspNetLink;
 
         [FindsBy(How = How.Id, Using = "gettingstarted-link")]
-        private IWebElement gettingStartedLink;
+        private IWebElement _gettingStartedLink;
 
         [FindsBy(How = How.Id, Using = "getlibraries-link")]
-        private IWebElement getLibrariesLink;
+        private IWebElement _getLibrariesLink;
 
         [FindsBy(How = How.Id, Using = "webhosting-link")]
-        private IWebElement webHostingLink;
+        private IWebElement _webHostingLink;
 
         public void Goto()
         {
-            Browser.Initialize();
+            Pages.TopNavigation.Home();
+        }
+
+        public bool IsAt()
+        {
+            return Browser.Title.Contains("Home");
         }
 
         public void AspNetLink()
         {
-            aspNetLink.Click();
+            _aspNetLink.Click();
         }
 
         public void GettingStartedLink()
         {
-            gettingStartedLink.Click();
+            _gettingStartedLink.Click();
         }
 
         public void GetLibrariesLink()
         {
-            getLibrariesLink.Click();
+            _getLibrariesLink.Click();
         }
 
         public void WebHostingLink()
         {
-            webHostingLink.Click();
+            _webHostingLink.Click();
         }
     }
 }

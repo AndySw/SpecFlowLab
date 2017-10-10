@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Browser.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Pages\ContactPage.cs" />
     <Compile Include="Pages\DefaultPage.cs" />
     <Compile Include="Pages\Pages.cs" />
     <Compile Include="Pages\TopNavigationPage.cs" />
