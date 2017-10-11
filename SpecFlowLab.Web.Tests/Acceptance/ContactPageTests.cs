@@ -21,7 +21,6 @@ namespace SpecFlowLab.Web.Tests.Acceptance
             Pages.Contact.Goto();
         }
 
-        //TODO - thing
         [TestMethod]
         public void When_I_view_the_Contact_page_Then_it_will_display_the_postal_address()
         {

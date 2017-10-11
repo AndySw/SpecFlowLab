@@ -78,6 +78,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Scripts\Start-Application.ps1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpecFlowLab.TestFramework\SpecFlowLab.TestFramework.csproj">
