@@ -10,7 +10,7 @@ namespace SpecFlowLab.TestFramework
 {
     public static class Browser
     {
-        private static string baseUrl = "http://localhost:51218/";
+        private static string baseUrl = "http://localhost:8080/";
         private static IWebDriver webDriver = new ChromeDriver();
         public static void Initialize()
         {

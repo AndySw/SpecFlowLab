@@ -6,8 +6,11 @@ namespace SpecFlowLab.Web.Tests.Acceptance
 {
     public class AcceptanceTest
     {
+        private static WebServer webServer;
+
         public static void TestFixtureSetup(TestContext testContext)
         {
+            webServer = WebServer.Start(@"C:\Users\andrew.sweetman\Projects\github\SpecFlowLab\SpecFlowLab.Web", 8080);
             Browser.Initialize();
             Trace.Write("AcceptanceTest.TestFixtureSetup");
             //UserGenerator.Initialize();
@@ -17,6 +20,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
         {
             Trace.Write("AcceptanceTest.TestFixtureTearDown");
             Browser.Close();
+            webServer.Stop();
         }
 
         [TestCleanup]
