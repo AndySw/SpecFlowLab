@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Linq;
 
 public class WebServer
 {
@@ -26,7 +27,12 @@ public class WebServer
     {
         Path = path;
         Port = port;
+        //CleanUpOrphanedProcesses(IIS_EXPRESS);
+        StartProcess(path, port);
+    }
 
+    private void StartProcess(string path, int port)
+    {
         StringBuilder arguments = new StringBuilder();
 
         if (!string.IsNullOrEmpty(Path))
@@ -69,6 +75,17 @@ public class WebServer
         catch (ArgumentException ex)
         {
             Trace.WriteLine($"SendStopMessageToProcess: {ex.ToString()}");
+        }
+    }
+
+    private static void CleanUpOrphanedProcesses(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path)) { return; }
+        var processName = System.IO.Path.GetFileNameWithoutExtension(path);
+        var processes = Process.GetProcessesByName(processName);
+        foreach(var process in processes)
+        {
+            process.Kill();
         }
     }
 

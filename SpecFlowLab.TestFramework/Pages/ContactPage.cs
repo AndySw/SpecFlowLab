@@ -16,10 +16,10 @@ namespace SpecFlowLab.TestFramework.Pages
         [FindsBy(How = How.TagName, Using = "address")]
         private IWebElement _addressElement;
 
-        [FindsBy(How = How.LinkText, Using = "support@example.com")]
+        [FindsBy(How = How.LinkText, Using = "Support@example.com")]
         private IWebElement _supportEmailLink;
 
-        [FindsBy(How = How.LinkText, Using = "marketing@example.com")]
+        [FindsBy(How = How.LinkText, Using = "Marketing@example.com")]
         private IWebElement _marketingEmailLink;
 
         public void Goto()
