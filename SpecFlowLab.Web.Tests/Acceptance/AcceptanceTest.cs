@@ -14,14 +14,14 @@ namespace SpecFlowLab.Web.Tests.Acceptance
         {
             Trace.Write("AcceptanceTest.AssemblyInitialize");
             webServer = WebServer.Start(@"C:\Users\andrew.sweetman\Projects\github\SpecFlowLab\SpecFlowLab.Web", 51218);
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
         }
 
         [AssemblyCleanup]
         public static void AssemblyCleanup()
         {
             Trace.Write("AcceptanceTest.AssemblyCleanup");
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
             webServer.Stop();
         }
 
