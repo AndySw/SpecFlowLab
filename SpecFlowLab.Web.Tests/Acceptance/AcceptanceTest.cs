@@ -13,7 +13,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
         public static void AssemblyInitialize(TestContext testContext)
         {
             Trace.Write("AcceptanceTest.AssemblyInitialize");
-            webServer = WebServer.Start(@"C:\Users\andrew.sweetman\Projects\github\SpecFlowLab\SpecFlowLab.Web", 8080);
+            webServer = WebServer.Start(@"C:\Users\andrew.sweetman\Projects\github\SpecFlowLab\SpecFlowLab.Web", 51218);
             Thread.Sleep(5000);
         }
 
