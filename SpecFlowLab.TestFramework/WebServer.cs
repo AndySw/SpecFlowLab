@@ -27,7 +27,7 @@ public class WebServer
     {
         Path = path;
         Port = port;
-        //CleanUpOrphanedProcesses(IIS_EXPRESS);
+        CleanUpOrphanedProcesses(IIS_EXPRESS);
         StartProcess(path, port);
     }
 

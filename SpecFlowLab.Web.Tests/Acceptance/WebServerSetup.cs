@@ -10,12 +10,12 @@ namespace SpecFlowLab.Web.Tests.Acceptance
     [SetUpFixture]
     public class WebServerSetup
     {
-        private static WebServer webServer;
+        private WebServer webServer;
 
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
-            webServer = WebServer.Start(@"C:\Users\andrew.sweetman\Projects\github\SpecFlowLab\SpecFlowLab.Web", 51218);
+            webServer = WebServer.Start(@"C:\Projects\github\SpecFlowLab\SpecFlowLab.Web", 51218);
         }
 
         [OneTimeTearDown]
