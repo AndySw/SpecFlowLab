@@ -7,10 +7,16 @@ using SpecFlowLab.TestFramework.Pages;
 namespace SpecFlowLab.Web.Tests.Acceptance
 {
     [TestFixture]
-    public class DefaultPageTests// : AcceptanceTest
+    public class DefaultPageTests
     {
         [SetUp]
         public void TestSetup()
+        {
+            Pages.Default.Goto();
+        }
+
+        [OneTimeTearDown]
+        public void TestFixtureTearDown()
         {
             Pages.Default.Goto();
         }

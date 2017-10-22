@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
@@ -13,7 +14,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SpecFlowLab.TestFramework.Pages
 {
-    public class DefaultPage : WaitablePage
+    public class DefaultPage
     {
         [FindsBy(How = How.Id, Using = "aspnet-link")]
         private IWebElement _aspNetLink;
@@ -29,8 +30,7 @@ namespace SpecFlowLab.TestFramework.Pages
 
         public void Goto()
         {
-            Pages.TopNavigation.Home();
-            
+            Browser.Goto("");
         }
 
         public bool IsAt()
@@ -46,19 +46,16 @@ namespace SpecFlowLab.TestFramework.Pages
         public void GettingStartedLink()
         {
             _gettingStartedLink.Click();
-            WaitUntilReady();
         }
 
         public void GetLibrariesLink()
         {
             _getLibrariesLink.Click();
-            WaitUntilReady();
         }
 
         public void WebHostingLink()
         {
             _webHostingLink.Click();
-            WaitUntilReady();
         }
     }
 }
