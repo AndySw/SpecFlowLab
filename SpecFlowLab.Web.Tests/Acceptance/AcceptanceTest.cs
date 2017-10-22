@@ -10,7 +10,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
     public class AcceptanceTest
     {
         [OneTimeSetUp]
-        public static void TestFixtureSetup(TestContext testContext)
+        public static void TestFixtureSetup()
         {
             Browser.Initialize();
             Trace.Write("AcceptanceTest.TestFixtureSetup");
