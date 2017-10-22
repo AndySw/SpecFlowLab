@@ -61,6 +61,7 @@
     <Compile Include="Pages\DefaultPage.cs" />
     <Compile Include="Pages\Pages.cs" />
     <Compile Include="Pages\TopNavigationPage.cs" />
+    <Compile Include="Pages\WaitablePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebServer.cs" />
   </ItemGroup>

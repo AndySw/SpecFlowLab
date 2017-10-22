@@ -13,7 +13,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SpecFlowLab.TestFramework.Pages
 {
-    public class DefaultPage
+    public class DefaultPage : WaitablePage
     {
         [FindsBy(How = How.Id, Using = "aspnet-link")]
         private IWebElement _aspNetLink;
@@ -46,16 +46,19 @@ namespace SpecFlowLab.TestFramework.Pages
         public void GettingStartedLink()
         {
             _gettingStartedLink.Click();
+            WaitUntilReady();
         }
 
         public void GetLibrariesLink()
         {
             _getLibrariesLink.Click();
+            WaitUntilReady();
         }
 
         public void WebHostingLink()
         {
             _webHostingLink.Click();
+            WaitUntilReady();
         }
     }
 }

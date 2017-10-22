@@ -38,16 +38,14 @@ namespace SpecFlowLab.TestFramework
             webDriver.Url = baseUrl + url;
         }
 
+        public static WebDriverWait Wait(int timeout)
+        {
+            return new WebDriverWait(webDriver, TimeSpan.FromMilliseconds(timeout));
+        }
+
         public static void Close()
         {
             webDriver.Quit();
-        }
-
-        public static void Wait()
-        {
-            var timeout = 10000; // in milliseconds
-            var wait = new WebDriverWait(webDriver, TimeSpan.FromMilliseconds(timeout));
-            wait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
     }
 }
