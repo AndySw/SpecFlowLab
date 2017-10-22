@@ -1,30 +1,15 @@
 using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit;
 using SpecFlowLab.TestFramework;
 using System.Threading;
+using NUnit.Framework;
 
 namespace SpecFlowLab.Web.Tests.Acceptance
 {
+    [TestFixture]
     public class AcceptanceTest
     {
-        private static WebServer webServer;
-
-        [AssemblyInitialize]
-        public static void AssemblyInitialize(TestContext testContext)
-        {
-            Trace.Write("AcceptanceTest.AssemblyInitialize");
-            webServer = WebServer.Start(@"C:\Users\andrew.sweetman\Projects\github\SpecFlowLab\SpecFlowLab.Web", 51218);
-            //Thread.Sleep(5000);
-        }
-
-        [AssemblyCleanup]
-        public static void AssemblyCleanup()
-        {
-            Trace.Write("AcceptanceTest.AssemblyCleanup");
-            //Thread.Sleep(5000);
-            webServer.Stop();
-        }
-
+        [OneTimeSetUp]
         public static void TestFixtureSetup(TestContext testContext)
         {
             Browser.Initialize();
@@ -32,13 +17,14 @@ namespace SpecFlowLab.Web.Tests.Acceptance
             //UserGenerator.Initialize();
         }
 
+        [OneTimeTearDown]
         public static void TestFixtureTearDown()
         {
             Trace.Write("AcceptanceTest.TestFixtureTearDown");
             Browser.Close();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void TearDown()
         {
             Trace.Write("AcceptanceTest.TearDown");

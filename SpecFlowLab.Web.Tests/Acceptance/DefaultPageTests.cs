@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using SpecFlowLab.TestFramework;
 using SpecFlowLab.TestFramework.Pages;
 
 namespace SpecFlowLab.Web.Tests.Acceptance
 {
-    [TestClass]
+    [TestFixture]
     public class DefaultPageTests : AcceptanceTest
     {
-        [ClassInitialize]
-        public new static void TestFixtureSetup(TestContext testContext) { AcceptanceTest.TestFixtureSetup(testContext); }
-
-        [ClassCleanup]
-        public new static void TestFixtureTearDown() { AcceptanceTest.TestFixtureTearDown(); }
-
-        [TestInitialize]
+        [SetUp]
         public void TestSetup()
         {
             Pages.Default.Goto();
         }
 
-        [TestMethod]
+        [Test]
         public void When_I_click_the_AspNet_link_Then_it_will_load_the_MS_AspNet_website()
         {
             // arrange
@@ -33,7 +27,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void When_I_click_the_GettingStarted_link_Then_it_will_load_the_MS_AspNet_WebForms_page()
         {
             // arrange
@@ -45,7 +39,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void When_I_click_the_GetLibraries_link_Then_it_will_load_the_NuGet_website()
         {
             // arrange
@@ -57,7 +51,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void When_I_click_the_WebHosting_link_Then_it_will_load_the_MS_AspNet_Identity_page()
         {
             // arrange
