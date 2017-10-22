@@ -7,7 +7,7 @@ using SpecFlowLab.TestFramework.Pages;
 namespace SpecFlowLab.Web.Tests.Acceptance
 {
     [TestFixture]
-    public class DefaultPageTests : AcceptanceTest
+    public class DefaultPageTests// : AcceptanceTest
     {
         [SetUp]
         public void TestSetup()
@@ -22,6 +22,7 @@ namespace SpecFlowLab.Web.Tests.Acceptance
             var expected = "https://www.asp.net/";
             // act
             Pages.Default.AspNetLink();
+            
             // assert
             var actual = Browser.Url;
             Assert.AreEqual(expected, actual);

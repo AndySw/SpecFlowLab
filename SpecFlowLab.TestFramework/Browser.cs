@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace SpecFlowLab.TestFramework
 {
@@ -39,8 +40,14 @@ namespace SpecFlowLab.TestFramework
 
         public static void Close()
         {
-            //webDriver.Close();
             webDriver.Quit();
+        }
+
+        public static void Wait()
+        {
+            var timeout = 10000; // in milliseconds
+            var wait = new WebDriverWait(webDriver, TimeSpan.FromMilliseconds(timeout));
+            wait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
         }
     }
 }

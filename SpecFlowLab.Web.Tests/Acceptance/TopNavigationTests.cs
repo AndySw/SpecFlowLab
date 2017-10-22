@@ -7,7 +7,7 @@ using SpecFlowLab.TestFramework.Pages;
 namespace SpecFlowLab.Web.Tests.Acceptance
 {
     [TestFixture]
-    public class TopNavigationTests : AcceptanceTest
+    public class TopNavigationTests// : AcceptanceTest
     {
         [Test]
         public void When_I_click_the_Home_link_Then_it_will_load_the_Default_page()

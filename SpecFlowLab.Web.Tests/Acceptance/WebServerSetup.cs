@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SpecFlowLab.TestFramework;
 
 namespace SpecFlowLab.Web.Tests.Acceptance
 {
@@ -16,12 +17,14 @@ namespace SpecFlowLab.Web.Tests.Acceptance
         public void RunBeforeAnyTests()
         {
             webServer = WebServer.Start(@"C:\Projects\github\SpecFlowLab\SpecFlowLab.Web", 51218);
+            Browser.Initialize();
         }
 
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
-           webServer.Stop();
+            webServer.Stop();
+            Browser.Close();
         }
     }
 }

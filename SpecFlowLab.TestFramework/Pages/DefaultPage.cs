@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
+
 // ReSharper disable InconsistentNaming
 // VS.NET    disable Value never assigned
 #pragma warning disable 649
@@ -28,6 +30,7 @@ namespace SpecFlowLab.TestFramework.Pages
         public void Goto()
         {
             Pages.TopNavigation.Home();
+            
         }
 
         public bool IsAt()
